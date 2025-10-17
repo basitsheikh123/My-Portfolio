@@ -1,0 +1,142 @@
+.navbar {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-color: #161513;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 170px;
+  z-index: 1000;
+  position: fixed;
+}
+
+.nav-logo {
+  height: 210px;
+  width: auto;
+  margin-left: -40px;
+  object-fit: contain;
+}
+
+/* ===== Menu ===== */
+.nav-menu {
+  align-items: center;
+  list-style: none;
+  display: flex;
+  gap: 60px;
+  font-size: 20px;
+  transition: all 0.4s ease;
+}
+
+.nav-menu li {
+  position: relative;
+  cursor: pointer;
+}
+
+.nav-menu li p {
+  color: white;
+  font-weight: 400;
+  transition: 0.3s;
+}
+
+.nav-menu li p:hover {
+  color: #DA7C25;
+}
+
+.nav-menu li img {
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 45px;
+  height: 8px;
+}
+
+/* ===== Button ===== */
+.nav-connect {
+  padding: 15px 30px;
+  border-radius: 50px;
+  background: linear-gradient(267deg, #DA7C25 0.36%, #8923E1 102.06%);
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.nav-connect:hover {
+  transform: scale(1.05);
+}
+
+.anchor-link {
+  text-decoration: none;
+  color: white;
+}
+
+/* ====== Mobile Menu Buttons ====== */
+.nav-mob-open,
+.nav-mob-close {
+  display: none;
+  cursor: pointer;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 0 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 25px;
+  }
+
+  .nav-connect {
+    display: none;
+  }
+
+  .nav-menu {
+    position: fixed;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    top: 0;
+    right: -300px;
+    height: 100vh;
+    width: 250px;
+    background-color: #161513;
+    padding: 100px 30px;
+    gap: 25px;
+    transition: right 0.4s ease;
+  }
+
+  .nav-menu.open {
+    right: 0;
+  }
+
+  .nav-mob-open {
+    display: block;
+    width: 35px;
+    height: 35px;
+  }
+
+  .nav-mob-close {
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-menu {
+    width: 200px;
+  }
+
+  .nav-menu li {
+    font-size: 18px;
+  }
+}
