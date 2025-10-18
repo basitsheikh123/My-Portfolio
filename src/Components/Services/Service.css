@@ -18,33 +18,37 @@
   font-weight: 600;
   text-align: center;
   transition: all 0.3s ease;
+  color: #fff;
 }
 
-/* Grid */
+/* ✅ Grid - always 2 columns centered */
 .services-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  max-width: 1200px;
+  grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 equal columns */
+  justify-content: center;
+  align-items: stretch;
+  gap: 25px;
   width: 100%;
+  max-width: 900px;
   margin: 0 auto 80px;
-  padding: 0 20px;
+  padding: 0 10px;
+  box-sizing: border-box;
 }
 
-/* Service card */
+/* Service Card */
 .services-format {
   position: relative;
-  min-height: 300px;
+  min-height: 250px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 40px;
+  padding: 25px;
   border-radius: 15px;
   border: 2px solid #fff;
+  background-color: #111;
   transition: all 0.4s ease;
   cursor: pointer;
   box-sizing: border-box;
-  background-color: #111;
 }
 
 .services-format:hover {
@@ -54,13 +58,13 @@
 }
 
 .services-format h3 {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
   color: #fff;
 }
 
 .services-format h2 {
-  font-size: 32px;
+  font-size: 24px;
   font-weight: 800;
   background: linear-gradient(264deg, #DF8908 0%, #B415ff 100%);
   background-clip: text;
@@ -69,26 +73,25 @@
 }
 
 .services-format p {
-  font-size: 15px;
-  line-height: 1.5;
+  font-size: 13px;
+  line-height: 1.4;
   color: #ddd;
   flex-grow: 1;
 }
 
-/* Read more */
+/* Read More */
 .services-redmore {
   display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
+  gap: 8px;
   color: #fff;
   font-weight: 500;
-  justify-content: center;
   margin-top: 10px;
 }
 
 .services-redmore img {
-  width: 30px;
-  height: auto;
+  width: 22px;
   transition: transform 0.3s ease;
 }
 
@@ -96,7 +99,7 @@
   transform: translateX(5px);
 }
 
-/* Tablet */
+/* 🔹 Tablet (max 992px) */
 @media (max-width: 992px) {
   .services-title h1 {
     text-align: left;
@@ -105,17 +108,16 @@
   }
 
   .services-container {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
+    gap: 20px;
   }
 
   .services-format {
-    padding: 25px;
-    min-height: 250px;
+    padding: 20px;
+    min-height: 220px;
   }
 
   .services-format h2 {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .services-format h3 {
@@ -123,16 +125,16 @@
   }
 
   .services-format p {
-    font-size: 13px;
-  }
-
-  .services-redmore img {
-    width: 25px;
+    font-size: 12px;
   }
 }
 
-/* Mobile */
+/* 🔹 Mobile (max 600px) */
 @media (max-width: 600px) {
+  .services {
+    padding: 50px 10px;
+  }
+
   .services-title h1 {
     text-align: left;
     font-size: 40px;
@@ -140,29 +142,49 @@
   }
 
   .services-container {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns fix */
+    gap: 10px;
+    max-width: 100%;
   }
 
   .services-format {
-    padding: 15px;
-    min-height: 220px;  /* enough height so Read More visible */
+    padding: 12px;
+    min-height: 200px;
   }
 
   .services-format h2 {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .services-format h3 {
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .services-format p {
-    font-size: 12px;
-    line-height: 1.3;
+    font-size: 11px;
   }
 
   .services-redmore img {
-    width: 20px;
+    width: 18px;
+  }
+}
+
+/* 🔹 Extra Small (max 400px) */
+@media (max-width: 400px) {
+  .services-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .services-format {
+    padding: 10px;
+  }
+
+  .services-format h2 {
+    font-size: 14px;
+  }
+
+  .services-format h3 {
+    font-size: 12px;
   }
 }

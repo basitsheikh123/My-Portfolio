@@ -1,3 +1,4 @@
+/* ===== Navbar ===== */
 .navbar {
   top: 0;
   left: 0;
@@ -11,13 +12,17 @@
   padding: 0 170px;
   z-index: 1000;
   position: fixed;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
+/* ===== Logo ===== */
 .nav-logo {
   height: 210px;
   width: auto;
   margin-left: -40px;
   object-fit: contain;
+  max-width: 100%;
 }
 
 /* ===== Menu ===== */
@@ -85,6 +90,10 @@
   .navbar {
     padding: 0 60px;
   }
+
+  .nav-logo {
+    height: 150px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -132,6 +141,14 @@
 }
 
 @media (max-width: 480px) {
+  .navbar {
+    padding: 0 15px;
+  }
+
+  .nav-logo {
+    height: 120px;
+  }
+
   .nav-menu {
     width: 200px;
   }
@@ -139,4 +156,9 @@
   .nav-menu li {
     font-size: 18px;
   }
+}
+
+/* ===== Prevent Scroll on All Screens ===== */
+html, body {
+  overflow-x: hidden;
 }
